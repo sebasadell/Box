@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Box {
     protected double height;
     protected double width;
@@ -25,6 +27,11 @@ public class Box {
     }
 
     public void setLabel(String label){
+        Scanner input = new Scanner(System.in);
+        while (label.length() > 30){
+            System.out.println("Too long. Set label again, please: ");
+            label = input.next();
+        }
         this.label = label;
     }
 
